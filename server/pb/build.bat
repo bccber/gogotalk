@@ -1,0 +1,14 @@
+protoc --go_out=. result.proto
+protoc --go_out=. userinfo.proto
+protoc --go_out=. login.proto
+protoc --go_out=. register.proto
+protoc --go_out=. getfriends.proto
+protoc --go_out=. changestatus.proto
+protoc --go_out=. logout.proto
+protoc --go_out=. updateuserinfo.proto
+protoc --go_out=. friendchat.proto
+protoc --go_out=. getuserlist.proto
+protoc --go_out=. addfriends.proto
+protoc --go_out=. heartbeat.proto
+protoc --go_out=. uploadfile.proto
+protoc --go_out=. getfilelist.proto

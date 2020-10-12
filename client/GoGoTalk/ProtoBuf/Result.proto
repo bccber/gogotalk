@@ -1,0 +1,8 @@
+﻿syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+message Result {
+	int32 Code = 1;	// 1:成功  其他失败
+	string Msg = 2; // 失败消息
+}

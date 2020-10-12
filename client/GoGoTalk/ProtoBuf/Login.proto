@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+import "Result.proto";
+import "UserInfo.proto";
+
+message LoginRequest {
+	string UserID = 1;		// 登陆的帐号
+	string Password = 2;	// 密码
+	int32 Status = 3;		// 状态
+}
+
+message LoginResponse {
+	Result Result = 1;		// 返回值
+	UserInfo User = 2;		// 用户信息
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pb;
+
+option csharp_namespace="pb";
+
+import "userinfo.proto";
+
+message UpdateUserInfoRequest {
+  UserInfo User = 2;
+}

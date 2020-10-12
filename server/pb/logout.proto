@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package pb;
+
+option csharp_namespace="pb";
+
+message LogoutRequest {
+  string UserID = 1;
+}

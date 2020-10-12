@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25573374-5579-4B2B-86DF-AB81D4963534}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GoGoTalk</RootNamespace>
+    <AssemblyName>GoGoTalk</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cskin.16.1.14.3\lib\net40\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.13.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.13.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProtoBuf\GetFileList.cs" />
+    <Compile Include="ProtoBuf\UploadFile.cs" />
+    <Compile Include="UploadFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UploadFileForm.Designer.cs">
+      <DependentUpon>UploadFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddFriendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFriendForm.Designer.cs">
+      <DependentUpon>AddFriendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseTask.cs" />
+    <Compile Include="GroupChatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupChatForm.Designer.cs">
+      <DependentUpon>GroupChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FriendChatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FriendChatForm.Designer.cs">
+      <DependentUpon>FriendChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResourceManager.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMD.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Network\Message.cs" />
+    <Compile Include="Network\ProtocolDecoder.cs" />
+    <Compile Include="ProtoBuf\AddFriends.cs" />
+    <Compile Include="ProtoBuf\ChangeStatus.cs" />
+    <Compile Include="ProtoBuf\FriendChat.cs" />
+    <Compile Include="ProtoBuf\GetFriends.cs" />
+    <Compile Include="ProtoBuf\GetUserList.cs" />
+    <Compile Include="ProtoBuf\Heartbeat.cs" />
+    <Compile Include="ProtoBuf\Logout.cs" />
+    <Compile Include="ProtoBuf\Result.cs" />
+    <Compile Include="ProtoBuf\UpdateUserInfo.cs" />
+    <Compile Include="ProtoBuf\UserInfo.cs" />
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StatusConst.cs" />
+    <Compile Include="Network\TCPClient.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtoBuf\Login.cs" />
+    <Compile Include="ProtoBuf\Register.cs" />
+    <Compile Include="UpdateUserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateUserInfoForm.Designer.cs">
+      <DependentUpon>UpdateUserInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="UploadFileForm.resx">
+      <DependentUpon>UploadFileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddFriendForm.resx">
+      <DependentUpon>AddFriendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupChatForm.resx">
+      <DependentUpon>GroupChatForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendChatForm.resx">
+      <DependentUpon>FriendChatForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUserInfoForm.resx">
+      <DependentUpon>UpdateUserInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ProtoBuf\GetFileList.proto" />
+    <None Include="ProtoBuf\Heartbeat.proto" />
+    <None Include="ProtoBuf\build.bat" />
+    <None Include="ProtoBuf\GetUserList.proto" />
+    <None Include="ProtoBuf\FriendChat.proto" />
+    <None Include="ProtoBuf\AddFriends.proto" />
+    <None Include="ProtoBuf\UploadFile.proto" />
+    <None Include="ProtoBuf\UpdateUserInfo.proto" />
+    <None Include="ProtoBuf\ChangeStatus.proto" />
+    <None Include="ProtoBuf\GetFriends.proto" />
+    <None Include="ProtoBuf\GetUserInfo.proto" />
+    <None Include="ProtoBuf\Logout.proto" />
+    <None Include="ProtoBuf\Result.proto" />
+    <None Include="ProtoBuf\Login.proto" />
+    <None Include="ProtoBuf\Register.proto" />
+    <None Include="ProtoBuf\UserInfo.proto" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\20120818113914742_easyicon_cn_16.png" />
+    <Content Include="Resources\20120818113914742_easyicon_cn_161.png" />
+    <Content Include="Resources\20120818113914742_easyicon_cn_162.png" />
+    <Content Include="Resources\20120824033434910_easyicon_cn_24.png" />
+    <Content Include="Resources\20120910030548870_easyicon_cn_24.png" />
+    <Content Include="Resources\20120910031018598_easyicon_cn_24.png" />
+    <Content Include="Resources\4.png" />
+    <Content Include="Resources\64-64.png" />
+    <Content Include="Resources\64.png" />
+    <Content Include="Resources\AddBtn_down.png" />
+    <Content Include="Resources\afternoon.jpg" />
+    <Content Include="Resources\aio_head_normal.png" />
+    <Content Include="Resources\aio_quickbar_cut.png" />
+    <Content Include="Resources\aio_quickbar_face.png" />
+    <Content Include="Resources\aio_quickbar_flirtationface.png" />
+    <Content Include="Resources\aio_quickbar_font.png" />
+    <Content Include="Resources\aio_quickbar_inputassist.png" />
+    <Content Include="Resources\aio_quickbar_more.png" />
+    <Content Include="Resources\aio_quickbar_register.png" />
+    <Content Include="Resources\aio_quickbar_richface.png" />
+    <Content Include="Resources\aio_quickbar_screen1.png" />
+    <Content Include="Resources\aio_quickbar_screen2.png" />
+    <Content Include="Resources\aio_quickbar_sendpic.png" />
+    <Content Include="Resources\aio_quickbar_twitter.png" />
+    <Content Include="Resources\AIO_SetBtn_down.png" />
+    <Content Include="Resources\AIO_SetBtn_highlight.png" />
+    <Content Include="Resources\AIO_SetBtn_highlight_normal.png" />
+    <Content Include="Resources\AIO_SetBtn_normal.png" />
+    <Content Include="Resources\allbtn_down.png" />
+    <Content Include="Resources\allbtn_highlight.png" />
+    <Content Include="Resources\all_inside_bkg.png" />
+    <Content Include="Resources\AM_MenuICON.png" />
+    <Content Include="Resources\app_icon_16.png" />
+    <Content Include="Resources\app_icon_161.png" />
+    <Content Include="Resources\app_icon_162.png" />
+    <Content Include="Resources\app_icon_40.png" />
+    <Content Include="Resources\app_icon_401.png" />
+    <Content Include="Resources\app_icon_402.png" />
+    <Content Include="Resources\AV_Accept.png" />
+    <Content Include="Resources\AV_Accept1.png" />
+    <Content Include="Resources\AV_Accept2.png" />
+    <Content Include="Resources\AV_New_Mic_Style3.png" />
+    <Content Include="Resources\AV_Refuse.png" />
+    <Content Include="Resources\AV_VDC_Bkg.png" />
+    <Content Include="Resources\away %282%29.png" />
+    <Content Include="Resources\b9m0_0.png" />
+    <Content Include="Resources\back.PNG" />
+    <Content Include="Resources\back2.PNG" />
+    <Content Include="Resources\BackPalace.png" />
+    <Content Include="Resources\BCF_Title32.ico" />
+    <Content Include="Resources\bell.png" />
+    <Content Include="Resources\Boot.png" />
+    <Content Include="Resources\Boot1.png" />
+    <Content Include="Resources\btn_close_disable.png" />
+    <Content Include="Resources\btn_close_disable1.png" />
+    <Content Include="Resources\btn_close_down.png" />
+    <Content Include="Resources\btn_close_down1.png" />
+    <Content Include="Resources\btn_close_highlight.png" />
+    <Content Include="Resources\btn_close_highlight1.png" />
+    <Content Include="Resources\btn_max_down.png" />
+    <Content Include="Resources\btn_max_down1.png" />
+    <Content Include="Resources\btn_max_highlight.png" />
+    <Content Include="Resources\btn_max_highlight1.png" />
+    <Content Include="Resources\btn_max_normal.png" />
+    <Content Include="Resources\btn_max_normal1.png" />
+    <Content Include="Resources\btn_mini_down.png" />
+    <Content Include="Resources\btn_mini_down1.png" />
+    <Content Include="Resources\btn_mini_highlight.png" />
+    <Content Include="Resources\btn_mini_highlight1.png" />
+    <Content Include="Resources\btn_mini_normal.png" />
+    <Content Include="Resources\btn_mini_normal1.png" />
+    <Content Include="Resources\btn_restore_down.png" />
+    <Content Include="Resources\btn_restore_down1.png" />
+    <Content Include="Resources\btn_restore_highlight.png" />
+    <Content Include="Resources\btn_restore_highlight1.png" />
+    <Content Include="Resources\btn_restore_normal.png" />
+    <Content Include="Resources\btn_restore_normal1.png" />
+    <Content Include="Resources\btn_set_hover.png" />
+    <Content Include="Resources\btn_set_hover1.png" />
+    <Content Include="Resources\btn_set_normal.png" />
+    <Content Include="Resources\btn_set_normal1.png" />
+    <Content Include="Resources\btn_set_press.png" />
+    <Content Include="Resources\btn_set_press1.png" />
+    <Content Include="Resources\btn_Skin_down.png" />
+    <Content Include="Resources\btn_Skin_down1.png" />
+    <Content Include="Resources\btn_Skin_highlight.png" />
+    <Content Include="Resources\btn_Skin_highlight1.png" />
+    <Content Include="Resources\btn_Skin_normal.png" />
+    <Content Include="Resources\btn_Skin_normal1.png" />
+    <Content Include="Resources\busy %282%29.png" />
+    <Content Include="Resources\busy.gif" />
+    <Content Include="Resources\busy1.gif" />
+    <Content Include="Resources\busy2.gif" />
+    <Content Include="Resources\button_login_down.png" />
+    <Content Include="Resources\button_login_down1.png" />
+    <Content Include="Resources\button_login_hover.png" />
+    <Content Include="Resources\button_login_hover1.png" />
+    <Content Include="Resources\button_login_normal.png" />
+    <Content Include="Resources\button_login_normal1.png" />
+    <Content Include="Resources\camera1.png" />
+    <Content Include="Resources\camera2.png" />
+    <Content Include="Resources\cameraDis.png" />
+    <Content Include="Resources\camera_no.png" />
+    <Content Include="Resources\camera_no2.png" />
+    <Content Include="Resources\chatfrom_voice_playing.png" />
+    <Content Include="Resources\checkbox_hightlight.png" />
+    <Content Include="Resources\checkbox_normal.png" />
+    <Content Include="Resources\checkbox_pushed.png" />
+    <Content Include="Resources\checkbox_tick_highlight.png" />
+    <Content Include="Resources\checkbox_tick_normal.png" />
+    <Content Include="Resources\checkbox_tick_pushed.png" />
+    <Content Include="Resources\ColumnMerged.bmp" />
+    <Content Include="Resources\comment.png" />
+    <Content Include="Resources\Conference_32.ico" />
+    <Content Include="Resources\Conference_32.png" />
+    <Content Include="Resources\Conference_64.ico" />
+    <Content Include="Resources\Conference_64.png" />
+    <Content Include="Resources\ContactTipsVASFlagExt_Camera.png" />
+    <Content Include="Resources\Conversation.png" />
+    <Content Include="Resources\copy.png" />
+    <Content Include="Resources\copy1.png" />
+    <Content Include="Resources\copy2.png" />
+    <Content Include="Resources\corner_back.png" />
+    <Content Include="Resources\corner_back_hover.png" />
+    <Content Include="Resources\corner_back_press.png" />
+    <Content Include="Resources\corner_left.png" />
+    <Content Include="Resources\corner_left_hover.png" />
+    <Content Include="Resources\corner_left_press.png" />
+    <Content Include="Resources\corner_right.png" />
+    <Content Include="Resources\corner_right_hover.png" />
+    <Content Include="Resources\corner_right_press.png" />
+    <Content Include="Resources\cut.png" />
+    <Content Include="Resources\cut1.png" />
+    <Content Include="Resources\cut2.png" />
+    <Content Include="Resources\cut3.png" />
+    <Content Include="Resources\cut_red.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\delete1.png" />
+    <Content Include="Resources\delete2.png" />
+    <Content Include="Resources\disk.png" />
+    <Content Include="Resources\Document 2 Edit.png" />
+    <Content Include="Resources\down.png" />
+    <Content Include="Resources\down1.png" />
+    <Content Include="Resources\down2.png" />
+    <Content Include="Resources\duozhanghao1.png" />
+    <Content Include="Resources\duozhanghao2.png" />
+    <Content Include="Resources\duozhanghao3.png" />
+    <Content Include="Resources\duozhanghao4.png" />
+    <Content Include="Resources\duozhanghao5.png" />
+    <Content Include="Resources\duozhanghao6.png" />
+    <Content Include="Resources\edit-redo.png" />
+    <Content Include="Resources\edit-redo1.png" />
+    <Content Include="Resources\edit-undo.png" />
+    <Content Include="Resources\edit-undo1.png" />
+    <Content Include="Resources\face-smile.png" />
+    <Content Include="Resources\find.png" />
+    <Content Include="Resources\find2.png" />
+    <Content Include="Resources\firstPage.png" />
+    <Content Include="Resources\Folder.png" />
+    <Content Include="Resources\folder_new.png" />
+    <Content Include="Resources\folder_new1.png" />
+    <Content Include="Resources\folder_new2.png" />
+    <Content Include="Resources\format-text-bold.png" />
+    <Content Include="Resources\frameBorderEffect_mouseDownDraw.png" />
+    <Content Include="Resources\frameBorderEffect_normalDraw.png" />
+    <Content Include="Resources\GG64.ico" />
+    <Content Include="Resources\girl.png" />
+    <Content Include="Resources\Go.bmp" />
+    <Content Include="Resources\Go1.bmp" />
+    <Content Include="Resources\Go2.bmp" />
+    <Content Include="Resources\group.ico" />
+    <Content Include="Resources\Group1.png" />
+    <Content Include="Resources\Group2.png" />
+    <Content Include="Resources\GVideoTurnOffVideo.png" />
+    <Content Include="Resources\GVideoTurnOnVideo.png" />
+    <Content Include="Resources\GVideo_Icon_48.png" />
+    <Content Include="Resources\GVShareVideoCloseSpk_MouseOver.png" />
+    <Content Include="Resources\GVShareVideoCloseSpk_Normal.png" />
+    <Content Include="Resources\HDVideoHangs.png" />
+    <Content Include="Resources\HDVideoPiP.png" />
+    <Content Include="Resources\icon_weibo.png" />
+    <Content Include="Resources\imgRjp.BackgroundImage.png" />
+    <Content Include="Resources\imoffline %282%29.png" />
+    <Content Include="Resources\imonline %282%29.png" />
+    <Content Include="Resources\inputbox.png" />
+    <Content Include="Resources\inputbox_hover.png" />
+    <Content Include="Resources\invisible %282%29.png" />
+    <Content Include="Resources\lastPage.png" />
+    <Content Include="Resources\login_inputbtn_down.png" />
+    <Content Include="Resources\login_inputbtn_highlight.png" />
+    <Content Include="Resources\login_inputbtn_normal.png" />
+    <Content Include="Resources\magnifier.png" />
+    <Content Include="Resources\menu_btn_highlight.png" />
+    <Content Include="Resources\menu_btn_normal.png" />
+    <Content Include="Resources\menu_check.png" />
+    <Content Include="Resources\mic1.png" />
+    <Content Include="Resources\mic2.png" />
+    <Content Include="Resources\micDis.png" />
+    <Content Include="Resources\mima.png" />
+    <Content Include="Resources\mima_hover.png" />
+    <Content Include="Resources\mima_press.png" />
+    <Content Include="Resources\MinIcons_005.png" />
+    <Content Include="Resources\MinIcons_017.png" />
+    <Content Include="Resources\morning.jpg" />
+    <Content Include="Resources\mute %282%29.png" />
+    <Content Include="Resources\NetState_Point4.png" />
+    <Content Include="Resources\nextPage.png" />
+    <Content Include="Resources\night.jpg" />
+    <Content Include="Resources\None64.ico" />
+    <Content Include="Resources\noon.jpg" />
+    <Content Include="Resources\normal_group_40.png" />
+    <Content Include="Resources\Norml.png" />
+    <Content Include="Resources\page.png" />
+    <Content Include="Resources\paste.png" />
+    <Content Include="Resources\paste1.png" />
+    <Content Include="Resources\paste2.png" />
+    <Content Include="Resources\Pencil.png" />
+    <Content Include="Resources\pic2.png" />
+    <Content Include="Resources\Picture.bmp" />
+    <Content Include="Resources\pictureBox1.Image.png" />
+    <Content Include="Resources\pngs\angry.png" />
+    <Content Include="Resources\pngs\anxious.png" />
+    <Content Include="Resources\pngs\curious.png" />
+    <Content Include="Resources\pngs\excited.png" />
+    <Content Include="Resources\pngs\exhilarated.png" />
+    <Content Include="Resources\pngs\exhilarated2.png" />
+    <Content Include="Resources\pngs\happy.png" />
+    <Content Include="Resources\pngs\love.png" />
+    <Content Include="Resources\pngs\offended.png" />
+    <Content Include="Resources\pngs\sad.png" />
+    <Content Include="Resources\pngs\shocked.png" />
+    <Content Include="Resources\pngs\silent.png" />
+    <Content Include="Resources\pngs\surprise.png" />
+    <Content Include="Resources\pngs\tease.png" />
+    <Content Include="Resources\pngs\wicked.png" />
+    <Content Include="Resources\pngs\yum.png" />
+    <Content Include="Resources\prePage.png" />
+    <Content Include="Resources\Qme %282%29.png" />
+    <Content Include="Resources\QQAddBuddyNormal.png" />
+    <Content Include="Resources\refresh.png" />
+    <Content Include="Resources\refresh1.png" />
+    <Content Include="Resources\refresh2.png" />
+    <Content Include="Resources\remind_highlight.png" />
+    <Content Include="Resources\RemoteHelp.png" />
+    <Content Include="Resources\Smiley Happy.png" />
+    <Content Include="Resources\spin_normal_down.png" />
+    <Content Include="Resources\Status\0.png" />
+    <Content Include="Resources\Status\1.png" />
+    <Content Include="Resources\Status\2.png" />
+    <Content Include="Resources\Status\3.png" />
+    <Content Include="Resources\Status\4.png" />
+    <Content Include="Resources\Status\5.png" />
+    <Content Include="Resources\Status\6.png" />
+    <Content Include="Resources\texture.png" />
+    <Content Include="Resources\texture2.png" />
+    <Content Include="Resources\ToolbarBtnDown.png" />
+    <Content Include="Resources\ToolbarBtnNormal.png" />
+    <Content Include="Resources\trad_group.png" />
+    <Content Include="Resources\up.png" />
+    <Content Include="Resources\up1.png" />
+    <Content Include="Resources\up2.png" />
+    <Content Include="Resources\user1.png" />
+    <Content Include="Resources\user2.png" />
+    <Content Include="Resources\user3.png" />
+    <Content Include="Resources\user4.png" />
+    <Content Include="Resources\user5.png" />
+    <Content Include="Resources\user6.png" />
+    <Content Include="Resources\users2.png" />
+    <Content Include="Resources\user_add.png" />
+    <Content Include="Resources\user_delete.png" />
+    <Content Include="Resources\VASFlagEnable.png" />
+    <Content Include="Resources\VideoWaitToAnswer.png" />
+    <Content Include="Resources\win_icon_16.ico" />
+    <Content Include="Resources\zhuce.png" />
+    <Content Include="Resources\zhuce_hover.png" />
+    <Content Include="Resources\zhuce_press.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

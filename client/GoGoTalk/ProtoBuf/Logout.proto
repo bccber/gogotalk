@@ -1,0 +1,7 @@
+﻿syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+message LogoutRequest {
+	string UserID = 1;
+}

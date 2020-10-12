@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package pb;
+
+option csharp_namespace="pb";
+
+import "result.proto";
+
+message RegisterRequest {
+  string UserID = 1;
+  string Password = 2;
+  string NickName = 3;
+  string Signature = 4;
+  bytes HeadImageData = 5;
+}
+
+message RegisterResponse {
+  Result Result = 1;
+}

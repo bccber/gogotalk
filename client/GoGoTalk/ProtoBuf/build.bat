@@ -1,0 +1,14 @@
+protoc --csharp_out=. Result.proto
+protoc --csharp_out=. UserInfo.proto
+protoc --csharp_out=. Login.proto
+protoc --csharp_out=. Register.proto
+protoc --csharp_out=. GetFriends.proto
+protoc --csharp_out=. Logout.proto
+protoc --csharp_out=. ChangeStatus.proto
+protoc --csharp_out=. UpdateUserInfo.proto
+protoc --csharp_out=. FriendChat.proto
+protoc --csharp_out=. GetUserList.proto
+protoc --csharp_out=. AddFriends.proto
+protoc --csharp_out=. Heartbeat.proto
+protoc --csharp_out=. UploadFile.proto
+protoc --csharp_out=. GetFileList.proto

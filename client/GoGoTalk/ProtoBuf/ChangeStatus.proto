@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+message ChangeStatusRequest {
+  string UserID = 1;
+  int32 Status = 2;
+}
+
+message ChangeStatusNotice {
+  string UserID = 1;
+  int32 Status = 2;
+}

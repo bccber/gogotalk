@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+option csharp_namespace="pb";
+
+import "result.proto";
+import "userinfo.proto";
+
+message GetUserListRequest {
+  string UserID = 1;
+}
+
+message GetUserListResponse {
+  Result Result = 1;
+  repeated UserInfo UserList = 2;
+}

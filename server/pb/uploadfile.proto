@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pb;
+
+option csharp_namespace="pb";
+
+import "result.proto";
+
+message UploadFileRequest {
+  string FromUserID = 1;  // 上传人
+  string ToUserID = 2;    // 好友ID或者群ID，由UserType决定
+  int32 UserType = 3;     // 0:所有人所人群可见，1:好友，2:群
+  string fileName = 4;    // 文件名
+  bytes Data = 5;         // 文件数据，最大300M
+}
+
+message UploadFileResponse {
+  Result Result = 1;    // 1:上传成功 其他:失败
+  string FileName = 2;  // 文件名
+  string DownUrl = 3;   // 下载地址
+}

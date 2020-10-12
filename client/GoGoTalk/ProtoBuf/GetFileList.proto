@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+import "Result.proto";
+
+message DownFileInfo {
+	string UserID = 1;		// 上传者
+	int64 FileSize = 2;		// 文件大小
+	string FileName = 3;	// 文件名
+	string DownUrl = 4;		// 下载地址
+}
+
+message GetFileListRequest {
+	string UserID = 1;
+	int32 UserType = 2;
+}
+
+message GetFileListResponse {
+	Result Result = 1;
+	repeated DownFileInfo FileList = 2;
+}

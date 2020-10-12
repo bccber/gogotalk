@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+option csharp_namespace="pb";
+
+message FriendChatRequest {
+  string FromUserID = 1;
+  string ToUserID = 2;
+  bytes Content = 3;
+}
+
+message FriendChatNotice {
+  string FromUserID = 1;
+  string ToUserID = 2;
+  bytes Content = 3;
+}

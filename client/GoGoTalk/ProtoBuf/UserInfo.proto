@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+message UserInfo {
+  string UserID = 1;
+  string NickName = 2;
+  string Signature = 3;
+  string HeadImageUrl = 4;
+  int64 CreateTime = 5;
+  int32 Status = 6;
+}

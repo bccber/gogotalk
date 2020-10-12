@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+import "Result.proto";
+import "UserInfo.proto";
+
+message GetUserInfoRequest {
+	string UserID = 1;
+}
+
+message GetUserInfoResponse {
+	Result Result = 1;
+	UserInfo User = 2;
+}

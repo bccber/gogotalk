@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+message FriendChatRequest {
+  string FromUserID = 1;
+  string ToUserID = 2;
+  bytes Content = 3;
+}
+
+message FriendChatNotice {
+  string FromUserID = 1;
+  string ToUserID = 2;
+  bytes Content = 3;
+}

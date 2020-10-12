@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+import "UserInfo.proto";
+
+message UpdateUserInfoRequest {
+  UserInfo User = 2;
+}

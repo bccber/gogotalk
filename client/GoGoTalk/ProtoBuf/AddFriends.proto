@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package GoGoTalk.ProtoBuf;
+
+import "Result.proto";
+
+message AddFriendsRequest {
+	string UserID = 1;
+	repeated string UserIDList = 2;
+}
+
+message AddFriendsResponse {
+	Result Result = 1;
+}

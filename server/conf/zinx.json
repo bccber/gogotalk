@@ -1,0 +1,10 @@
+{
+  "Name":"GoGoTalk",
+  "Host":"0.0.0.0",
+  "TcpPort":8999,
+  "MaxConn":2048,
+  "WorkerPoolSize":8,
+  "MaxPacketSize":524288000,
+  "LogDir": "/log",
+  "LogFile":"run.log"
+}

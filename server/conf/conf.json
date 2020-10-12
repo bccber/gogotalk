@@ -1,0 +1,7 @@
+{
+  "MySQLConn": "root:123456@tcp(127.0.0.1:33066)/gogotalk_db?charset=utf8&loc=Asia%2FShanghai&parseTime=true",
+  "ResPath": "D:/soft/Go/pro/src/github.com/bccber/gogotalk/server/res/",
+  "ResServerIP": "",
+  "ResServerPort": 8080,
+  "ResServerUrl": "http://127.0.0.1:8080/res"
+}
