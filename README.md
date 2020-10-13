@@ -122,16 +122,32 @@ ProtocolDecoder：
 ```
 
 
-
 **三、服务端**
 
 ```
 服务端使用golang + protobuf开发，通讯组件使用 [zinx](http://github.com/aceld/zinx), zinx内部已经实现了 
 4个字节的长度 + 4个字节的包长 + 数据包  的协议
-只要把命令号和处理对象绑定，并实现Handld方法就成了，其他的就是业务代码了
-
-在服务端里，使用gin实现了一个简陋的web服务，用于下载头像，文件等资源
-使用TCP协议上传文件后，同步到其他web或者CDN服务，再把URL返回给客户端
-这种架构对客户端和服务端都是很好的，实现简单，并且能大大减少服务端压力。
+只要把命令号和处理对象绑定，并实现Handle方法就成了，其他的就是业务代码了
+```
+```go
+	// 注册路由
+	server.AddRouter(models.LoginRequestCMD, &network.LoginRequest{})
+	server.AddRouter(models.RegisterRequestCMD, &network.RegisterRequest{})
+	server.AddRouter(models.GetFriendsRequestCMD, &network.GetFriendsRequest{})
+	server.AddRouter(models.UserOfflineRequestCMD, &network.LogoutRequest{})
+	server.AddRouter(models.ChangeStatusRequestCMD, &network.ChangeStatusRequest{})
+	server.AddRouter(models.UpdateUserInfoRequestCMD, &network.UpdateUserInfoRequest{})
+	server.AddRouter(models.FriendChatRequestCMD, &network.FriendChatRequest{})
+	server.AddRouter(models.GetUserListRequestCMD, &network.GetUserListRequest{})
+	server.AddRouter(models.AddFriendsRequestCMD, &network.AddFriendsRequest{})
+	server.AddRouter(models.HeartbeatRequestCMD, &network.HeartbeatRequest{})
+	server.AddRouter(models.UploadFileRequestCMD, &network.UploadFileRequest{})
+	server.AddRouter(models.GetFileListRequestCMD, &network.GetFileListRequest{})
+```
 
 ```
+客户端发送LoginRequest到服务后，服务端解析出 LoginRequestCMD 命令号，响应到network.LoginRequest{}里，在network.LoginRequest{}的Handle()里进行业务处理，最后使用LoginResponseCMD 和 pb.LoginResponse{}应答客户端的请求。
+```
+
+
+源码：https://github.com/bccber/gogotalk
